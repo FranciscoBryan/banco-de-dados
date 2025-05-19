@@ -1,0 +1,28 @@
+CREATE TABLE hospede (
+    nome VARCHAR (25) NOT NULL,
+	genero VARCHAR (1),
+	biotipo VARCHAR (1),
+	altura NUMERIC (5,2),
+	PRIMARY KEY (nome)	
+)
+	
+CREATE TABLE quarto (
+	nome VARCHAR (25) NOT NULL,
+	quarto INT NOT NULL,
+	chegada DATE NOT NULL,
+	saida DATE,
+	desconto NUMERIC (5,2),
+	PRIMARY KEY (nome, quarto)
+)
+
+SELECT * FROM hospede;
+INSERT INTO hospede (nome, genero, biotipo, altura	)
+VALUES (
+	'emanuel','m','m',1.70
+)
+ SELECT * FROM quarto;
+ SELECT *FROM hospede;
+ ALTER TABLE quarto ADD constraint fkquarto FOREIGN KEY (nome)
+ REFERENCES hospede (nome)
+ ON UPDATE CASCADE
+ON DELETE CASCADE
